@@ -15,7 +15,7 @@ export default function Home() {
 
   const heroStyle = {
     display: "grid",
-    gridTemplateColumns: "1.2fr 0.8fr",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
     gap: "28px",
     alignItems: "center",
     minHeight: "calc(100vh - 160px)"
@@ -26,7 +26,7 @@ export default function Home() {
     backdropFilter: "blur(10px)",
     border: "1px solid rgba(255,255,255,0.7)",
     borderRadius: "32px",
-    padding: "42px",
+    padding: "clamp(24px, 5vw, 42px)",
     boxShadow: "0 20px 60px rgba(82, 55, 29, 0.10)"
   }
 
@@ -43,7 +43,7 @@ export default function Home() {
   }
 
   const titleStyle = {
-    fontSize: "72px",
+    fontSize: "clamp(42px, 9vw, 72px)",
     lineHeight: "0.95",
     letterSpacing: "-3px",
     color: "#1f1a17",
@@ -52,7 +52,7 @@ export default function Home() {
   }
 
   const textStyle = {
-    fontSize: "18px",
+    fontSize: "clamp(16px, 3vw, 18px)",
     lineHeight: "1.8",
     color: "#6f665f",
     maxWidth: "650px",
@@ -73,7 +73,9 @@ export default function Home() {
     color: "white",
     textDecoration: "none",
     fontWeight: "700",
-    boxShadow: "0 14px 30px rgba(0,0,0,0.16)"
+    boxShadow: "0 14px 30px rgba(0,0,0,0.16)",
+    textAlign: "center",
+    flex: "1 1 170px"
   }
 
   const secondaryBtn = {
@@ -83,12 +85,14 @@ export default function Home() {
     color: "#1f1a17",
     textDecoration: "none",
     fontWeight: "700",
-    border: "1px solid rgba(0,0,0,0.08)"
+    border: "1px solid rgba(0,0,0,0.08)",
+    textAlign: "center",
+    flex: "1 1 170px"
   }
 
   const statsRow = {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
     gap: "16px"
   }
 
@@ -107,31 +111,14 @@ export default function Home() {
   const showcaseCard = {
     background: "rgba(255,255,255,0.72)",
     borderRadius: "30px",
-    padding: "24px",
+    padding: "clamp(18px, 4vw, 24px)",
     boxShadow: "0 20px 60px rgba(82, 55, 29, 0.10)",
     border: "1px solid rgba(255,255,255,0.7)"
   }
 
-  const visualBox = {
-    height: "290px",
-    borderRadius: "24px",
-    background:
-      "linear-gradient(135deg, #1f1a17 0%, #5e4432 55%, #c58b57 100%)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: "white",
-    fontSize: "34px",
-    fontWeight: "800",
-    letterSpacing: "-1px",
-    marginBottom: "18px",
-    textAlign: "center",
-    padding: "20px"
-  }
-
   const miniGrid = {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
     gap: "18px"
   }
 
@@ -143,7 +130,7 @@ export default function Home() {
   }
 
   const sectionTitle = {
-    fontSize: "30px",
+    fontSize: "clamp(24px, 5vw, 30px)",
     color: "#1f1a17",
     margin: "0 0 10px 0"
   }
@@ -158,7 +145,7 @@ export default function Home() {
   const bottomSection = {
     marginTop: "26px",
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
     gap: "18px"
   }
 
@@ -232,137 +219,137 @@ export default function Home() {
 
           <div style={rightColumn}>
             <div style={showcaseCard}>
-         <div
-  style={{
-    ...visualBox,
-    position: "relative",
-    height: "280px",
-    borderRadius: "28px",
-    overflow: "hidden",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "38px",
-    fontWeight: "800",
-    letterSpacing: "3px",
-    color: "#fff",
-    cursor: "pointer",
-    background: "rgba(20,20,20,0.6)",
-    backdropFilter: "blur(25px)",
-    WebkitBackdropFilter: "blur(25px)",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
-    border: "1px solid rgba(255,255,255,0.08)",
-    transition: "all 0.4s ease",
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.transform = "scale(1.05)";
-    e.currentTarget.style.boxShadow = "0 18px 45px rgba(0,0,0,0.45)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "scale(1)";
-    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.35)";
-  }}
->
-  <div
-    style={{
-      position: "absolute",
-      width: "200%",
-      height: "200%",
-      background: "conic-gradient(from 0deg, #000, #6b4f3b, #c89b6d, #000)",
-      animation: "spin 6s linear infinite",
-      opacity: 0.25,
-    }}
-  />
+              <div
+                style={{
+                  position: "relative",
+                  height: "clamp(220px, 55vw, 280px)",
+                  borderRadius: "28px",
+                  overflow: "hidden",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "clamp(30px, 8vw, 38px)",
+                  fontWeight: "800",
+                  letterSpacing: "3px",
+                  color: "#fff",
+                  cursor: "pointer",
+                  background: "rgba(20,20,20,0.6)",
+                  backdropFilter: "blur(25px)",
+                  WebkitBackdropFilter: "blur(25px)",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  transition: "all 0.4s ease",
+                  marginBottom: "18px"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.05)"
+                  e.currentTarget.style.boxShadow = "0 18px 45px rgba(0,0,0,0.45)"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)"
+                  e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.35)"
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    width: "200%",
+                    height: "200%",
+                    background: "conic-gradient(from 0deg, #000, #6b4f3b, #c89b6d, #000)",
+                    animation: "spin 6s linear infinite",
+                    opacity: 0.25
+                  }}
+                />
 
-  <div
-    style={{
-      position: "absolute",
-      inset: "0",
-      backdropFilter: "blur(40px)",
-      WebkitBackdropFilter: "blur(40px)",
-    }}
-  />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: "0",
+                    backdropFilter: "blur(40px)",
+                    WebkitBackdropFilter: "blur(40px)"
+                  }}
+                />
 
-  <div
-    style={{
-      position: "absolute",
-      top: 0,
-      left: "-100%",
-      width: "100%",
-      height: "100%",
-      background:
-        "linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent)",
-      animation: "shine 3s infinite",
-    }}
-  />
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: "-100%",
+                    width: "100%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent)",
+                    animation: "shine 3s infinite"
+                  }}
+                />
 
-  <div
-    style={{
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      zIndex: 1,
-      pointerEvents: "none",
-    }}
-  >
-    {Array.from({ length: 15 }).map((_, i) => (
-      <div
-        key={i}
-        style={{
-          position: "absolute",
-          width: "5px",
-          height: "5px",
-          borderRadius: "50%",
-          background: "rgba(255,255,255,0.95)",
-          boxShadow: "0 0 10px rgba(255,255,255,0.9)",
-          top: `${Math.random() * 100}%`,
-          left: `${Math.random() * 100}%`,
-          animation: `float ${2 + Math.random() * 2}s infinite ease-in-out`,
-        }}
-      />
-    ))}
-  </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    zIndex: 1,
+                    pointerEvents: "none"
+                  }}
+                >
+                  {Array.from({ length: 15 }).map((_, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        position: "absolute",
+                        width: "5px",
+                        height: "5px",
+                        borderRadius: "50%",
+                        background: "rgba(255,255,255,0.95)",
+                        boxShadow: "0 0 10px rgba(255,255,255,0.9)",
+                        top: `${Math.random() * 100}%`,
+                        left: `${Math.random() * 100}%`,
+                        animation: `float ${2 + Math.random() * 2}s infinite ease-in-out`
+                      }}
+                    />
+                  ))}
+                </div>
 
-  <div
-    style={{
-      position: "relative",
-      zIndex: 2,
-      textShadow: "0 4px 20px rgba(0,0,0,0.6)",
-    }}
-  >
-    SHOPIX
-  </div>
+                <div
+                  style={{
+                    position: "relative",
+                    zIndex: 2,
+                    textShadow: "0 4px 20px rgba(0,0,0,0.6)"
+                  }}
+                >
+                  SHOPIX
+                </div>
 
-  <style>{`
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+                <style>{`
+                  @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                  }
 
-    @keyframes shine {
-      0% { left: -100%; }
-      100% { left: 120%; }
-    }
+                  @keyframes shine {
+                    0% { left: -100%; }
+                    100% { left: 120%; }
+                  }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px) scale(1);
-        opacity: 0.55;
-      }
-      50% {
-        transform: translateY(-24px) scale(1.35);
-        opacity: 1;
-      }
-    }
-  `}</style>
-</div>
+                  @keyframes float {
+                    0%, 100% {
+                      transform: translateY(0px) scale(1);
+                      opacity: 0.55;
+                    }
+                    50% {
+                      transform: translateY(-24px) scale(1.35);
+                      opacity: 1;
+                    }
+                  }
+                `}</style>
+              </div>
 
               <h2 style={sectionTitle}>
                 Extraordinary style. Effortless browsing.
               </h2>
 
               <p style={sectionText}>
-             Crafted to deliver a seamless, high-end commerce experience with refined design and purposeful detail.
+                Crafted to deliver a seamless, high-end commerce experience with refined design and purposeful detail.
               </p>
             </div>
 
